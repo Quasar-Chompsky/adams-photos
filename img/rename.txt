@@ -1,0 +1,9 @@
+#renames files to image#
+counter = 1
+for file in *.jpg
+do
+new_name="image${counter}.jpg"
+mv "$file" "$new_name"
+((counter++))
+echo "renamed: $file to $new_name"
+done
