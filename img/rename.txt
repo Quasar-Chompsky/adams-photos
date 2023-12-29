@@ -1,4 +1,5 @@
 #renames files to image#
+
 counter = 1
 for file in *.jpg
 do
