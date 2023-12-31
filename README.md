@@ -1,0 +1,1 @@
+This is a website for my friend Adam Rotert, who is a very talented photgrapher among many other personal and professional achievements. This will aslo serve as a place for me to experiment along the way of my own web development journey.
