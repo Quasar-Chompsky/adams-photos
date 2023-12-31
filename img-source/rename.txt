@@ -1,0 +1,23 @@
+base_directory="img-source/"
+
+# Counter for renaming
+counter=1
+
+# Iterate through files in the base directory
+for file in "$base_directory"/*; do
+    if [ -f "$file" ]; then
+        # Get the file extension
+        extension="${file##*.}"
+
+        # Construct the new file name
+        new_file="$base_directory/image${counter}.$extension"
+
+        # Rename the file
+        mv "$file" "$new_file"
+
+        echo "Renamed $file to $new_file"
+
+        # Increment the counter for the next iteration
+        ((counter++))
+    fi
+done
