@@ -26,12 +26,25 @@ h1 {
     }
 
 }
+
+img {
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #1b08c2;
+    max-width: 100%;
+    height: auto;
+    }
+
 a {
     color: #00ffff;
     text-decoration: none;
-    box-shadow: 2px 2px 2px #1b08c2, 
-                4px 4px 4px #a33bec, 
-                6px 6px 6px #fc03a1,
+    text-shadow: 2px 2px 0px #1b08c2, 
+                4px 4px 0px #a33bec, 
+                6px 6px 0px #fc03a1,
                 8px 8px 8px #fde74c;
     animation: blink 2s infinite;
+}
+
+a:hover {
+    animation-play-state: paused;
 }
