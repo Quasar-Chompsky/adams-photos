@@ -2,12 +2,29 @@
 body {
     background-color: #2e0854;
     color: #00ffff;
-    font-family: coubra, 'Press Start 2P', roboto, "Open Sans", sans-serif;
+    font-family: Coubra, 'Press Start 2P', roboto, "Open Sans", sans-serif;
     text-shadow: 2px 2px 2px #1b08c2;
     margin: 0px, 0px, 50px, 50px;
     padding: 50px;
+    line-height: 2;   
 }
 
+ol p {
+    color: #FDE74C;
+    text-shadow: 2px 2px 2px #1b08c2;
+    font-size: 115%;
+}
+
+body h2 a {
+    color: #a33bec;
+    text-decoration: none;
+    text-shadow: 2px 2px 0px #9400d3, 
+                4px 4px 0px #a33bec, 
+                6px 6px 0px #fc03a1,
+                8px 8px 8px #fde74c,
+                10px 10px 20px #fde74c;
+    animation: blink 2s infinite;
+}
 h1 {
     color: #FDE74C;
     text-shadow: 2px 2px 2px #1b08c2;
@@ -50,16 +67,6 @@ img {
     height: 100vh;
     width: auto;
     margin-bottom: 25px;
-}
-
-a {
-    color: #00ffff;
-    text-decoration: none;
-    text-shadow: 2px 2px 0px #1b08c2, 
-                4px 4px 0px #a33bec, 
-                6px 6px 0px #fc03a1,
-                8px 8px 8px #fde74c;
-    animation: blink 2s infinite;
 }
 
 a:hover {
