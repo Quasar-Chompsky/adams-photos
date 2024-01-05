@@ -16,7 +16,7 @@ ol p {
 }
 
 body h2 a {
-    color: #a33bec;
+    color: #fc03a1;
     text-decoration: none;
     text-shadow: 2px 2px 0px #9400d3, 
                 4px 4px 0px #a33bec, 
@@ -26,10 +26,14 @@ body h2 a {
     animation: blink 2s infinite;
 }
 
-h2 {
-    color: #807a4b;
+h2 ul {
+    color: #beb678;
     text-shadow: 2px 2px 2px #1b08c2;
-    font-size: 175%;
+}
+
+.sub-header {
+    color: #FDE74C;
+    text-shadow: 2px 2px 2px #1b08c2;
 }
 
 strong {
