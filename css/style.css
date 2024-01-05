@@ -25,6 +25,19 @@ body h2 a {
                 10px 10px 20px #fde74c;
     animation: blink 2s infinite;
 }
+
+h2 {
+    color: #807a4b;
+    text-shadow: 2px 2px 2px #1b08c2;
+    font-size: 175%;
+}
+
+strong {
+    color: #FDE74C;
+    text-shadow: 2px 2px 2px #1b08c2;
+    font-size: 115%;
+}
+
 h1 {
     color: #FDE74C;
     text-shadow: 2px 2px 2px #1b08c2;
@@ -62,9 +75,16 @@ img {
     object-fit: cover;
 }
 
+.adam-portrait {
+    object-fit: cover;
+    height: 75vh;
+    width: auto;
+    margin-bottom: 25px;
+}
+
 .evie {
     object-fit: cover;
-    height: 100vh;
+    height: 75vh;
     width: auto;
     margin-bottom: 25px;
 }
