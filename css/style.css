@@ -2,7 +2,7 @@
 body {
     background-color: #2e0854;
     color: #00ffff;
-    font-family: coubra, 'Press Start 2P', system-ui;
+    font-family: coubra, 'Press Start 2P', roboto, "Open Sans", sans-serif;
     text-shadow: 2px 2px 2px #1b08c2;
     margin: 0px, 0px, 50px, 50px;
     padding: 50px;
