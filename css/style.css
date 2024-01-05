@@ -1,6 +1,5 @@
 /* synthwave color scheme */
 body {
-
     background-color: #2e0854;
     color: #00ffff;
     font-family: coubra, 'Press Start 2P', cursive;
@@ -8,32 +7,34 @@ body {
 }
 
 h1 {
-
     color: #FDE74C;
     text-shadow: 2px 2px 2px #1b08c2;
-
 }
 
 @keyframes blink {
-    0% {
+    0%  {
         opacity: 1;
     }
     50% {
-        opacity: 0;
-    }
+        opacity: 0;}
     100% {
         opacity: 1;
     }
-
 }
 
 img {
-    border: 2px solid #00ffff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px #1b08c2;
+    border: 2px solid #2e0854;
+    box-shadow: 2px 2px 2px #1b08c2,
+                4px 4px 4px #a33bec,
+                6px 6px 6px #fc03a1,
+                8px 8px 8px #fde74c;
     max-width: 100%;
     height: auto;
-    }
+    position: relative; /* Add this line to enable positioning */
+    top: 10px; /* Adjust the value to move the image vertically */
+    left: 10px; /* Adjust the value to move the image horizontally */
+    
+}
 
 a {
     color: #00ffff;
@@ -47,4 +48,8 @@ a {
 
 a:hover {
     animation-play-state: paused;
+    color: #fde74c;
+    font-size: 175%;
+    font-weight: 1500;
+    animation: none;
 }
