@@ -1,103 +1,38 @@
-/* synthwave color scheme */
-body {
-    background-color: #2e0854;
-    color: #00ffff;
-    font-family: Coubra, 'Press Start 2P', roboto, "Open Sans", sans-serif;
-    text-shadow: 2px 2px 2px #1b08c2;
-    margin: 0px, 0px, 50px, 50px;
-    padding: 50px;
-    line-height: 2;   
+* {
+    padding: 0;
+    margin: 0;
 }
 
-ol p {
-    color: #FDE74C;
-    text-shadow: 2px 2px 2px #1b08c2;
-    font-size: 115%;
+.container {
+    max-width: 1224px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
 }
 
-body h2 a {
-    color: #fc03a1;
-    text-decoration: none;
-    text-shadow: 2px 2px 0px #9400d3, 
-                4px 4px 0px #a33bec, 
-                6px 6px 0px #fc03a1,
-                8px 8px 8px #fde74c,
-                10px 10px 20px #fde74c;
-    animation: blink 2s infinite;
+.title {
+    margin-bottom: 2rem;
 }
 
-h2 ul {
-    color: #beb678;
-    text-shadow: 2px 2px 2px #1b08c2;
+.photo-gallery {
+    display: flex;
+    gap: 20px;
 }
 
-.sub-header {
-    color: #FDE74C;
-    text-shadow: 2px 2px 2px #1b08c2;
+.column {
+    display: flex;
+    flex-direction: column;
 }
 
-strong {
-    color: #FDE74C;
-    text-shadow: 2px 2px 2px #1b08c2;
-    font-size: 115%;
-}
-
-h1 {
-    color: #FDE74C;
-    text-shadow: 2px 2px 2px #1b08c2;
-}
-
-@keyframes blink {
-    0%  {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.1;}
-    100% {
-        opacity: 1;
-    }
-}
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 10px;
-    grid-auto-rows: minmax(50px, auto);
-    grid-auto-flow: dense;
-    justify-content: center;
-    align-items: center;
-    margin: 0px, 0px, 50px, 50px;
-    padding: 50px;
-}
-img {
-    border: 2px solid #2e0854;
-    box-shadow: 2px 2px 2px #1b08c2,
-                4px 4px 4px #a33bec,
-                6px 6px 6px #fc03a1,
-                8px 8px 8px #fde74c;
-    max-width: 100%;
+.photo img {
+    width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 5px;
 }
 
-.adam-portrait {
-    object-fit: cover;
-    height: 75vh;
-    width: auto;
-    margin-bottom: 25px;
+@media(max-width: 768px) {
+    .photo-gallery {
+        flex-direction: column;
+    }
 }
-
-.evie {
-    object-fit: cover;
-    height: 75vh;
-    width: auto;
-    margin-bottom: 25px;
-}
-
-a:hover {
-    animation-play-state: paused;
-    color: #fde74c;
-    font-size: 175%;
-    font-weight: 1500;
-    animation: none;
-}
-
