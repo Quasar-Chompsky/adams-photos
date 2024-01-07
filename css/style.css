@@ -49,6 +49,7 @@
     height: 100%;
     width: 100%;
     z-index: 100;
+    display: none;
 }
 
 .container .popup-image span {
@@ -59,3 +60,21 @@
     color: #fff;
     cursor: pointer;
 }
+
+.container .popup-image img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 82%;
+    max-height: 82%;
+    border-radius: 5px;
+}
+
+@media(max-width: 768px) {
+    .container .popup-image img {
+        max-width: 95%;
+        max-height: 95%;
+    }
+}
+```
+```
