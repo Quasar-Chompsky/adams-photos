@@ -3,6 +3,22 @@
     margin: 0;
 }
 
+.menu-container {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #5995da;
+    padding: 20px 0;
+    text-decoration: dashed;
+}
+
+
+.menu {
+    border: 1px solid #fff;
+   width: 900px; 
+}
+
+
 .container {
     max-width: 1224px;
     width: 90%;
@@ -76,5 +92,3 @@
         max-height: 95%;
     }
 }
-```
-```
