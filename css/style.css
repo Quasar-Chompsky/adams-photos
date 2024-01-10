@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .menu-container {
@@ -11,15 +12,43 @@
     padding: 20px 0;
 }
 
+.menu {
+    display: flex;
+    width: 900px; 
+    justify-content: flex-end;
+}
+
 a {
     text-decoration: none;
     color: #fff;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center;
+    background-color: #D6e9fe;
+    color: #5995da;
+}
 
-.menu {
-    border: 1px solid #fff;
-   width: 900px; 
+.header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.login {
+    margin-left: 20px;
+    margin-right: 5vh;
+}.social {
+    margin-left: 5vh;
+    margin-right: 20px;
+}
+.subscribe {
+    margin-left: 20px;
+    margin-right: 5vh;
 }
 
 
