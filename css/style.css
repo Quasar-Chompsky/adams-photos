@@ -9,7 +9,11 @@
     color: #fff;
     background-color: #5995da;
     padding: 20px 0;
-    text-decoration: dashed;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 
