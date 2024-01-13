@@ -1,4 +1,4 @@
-#if jpg, code converts to webp using cwebp tool. if heic, first converts to jpg using libheif, then to webp using cwebp. Skips non-image files.
+#if jpg, code converts to webp using cwebp tool. if heic, first converts to jpg using libheif, then to webp using cwebp. Skips non-image files. then checks if the file is above 200kb, in which case it runs it again until it is at or below 200kb.
 
 for file in *.{jpg,heic}; do
     if [ -f "$file" ]; then
@@ -15,7 +15,13 @@ for file in *.{jpg,heic}; do
             cwebp -q 80 "$new_name" -o "$webp_name"
             echo "Converted $file to $webp_name"
             # Optional: Remove the temporary JPEG file if needed
-            rm "$new_name"
+            # rm "$new_name"
+
+            # Check if the file size is above 200KB and rerun conversion
+            while [ "$(du -k "$webp_name" | cut -f1)" -gt 200 ]; do
+                cwebp -q 80 "$new_name" -o "$webp_name"
+                echo "Reconverted $webp_name to meet size requirement"
+            done
         else
             echo "Skipping non-image file: $file"
         fi
@@ -23,3 +29,4 @@ for file in *.{jpg,heic}; do
         echo "Skipping non-file: $file"
     fi
 done
+
