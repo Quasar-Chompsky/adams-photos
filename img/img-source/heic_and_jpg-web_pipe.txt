@@ -1,0 +1,25 @@
+#if jpg, code converts to webp using cwebp tool. if heic, first converts to jpg using libheif, then to webp using cwebp. Skips non-image files.
+
+for file in *.{jpg,heic}; do
+    if [ -f "$file" ]; then
+        if file --mime-type "$file" | grep -q "image/jpeg"; then
+            # JPEG file, convert to WebP directly
+            new_name="${file%.jpg}.webp"
+            cwebp -q 80 "$file" -o "$new_name"
+            echo "Converted $file to $new_name"
+        elif file --mime-type "$file" | grep -q "image/heic"; then
+            # HEIC file, convert to JPEG first, then to WebP
+            new_name="${file%.heic}.jpg"
+            heif-convert "$file" "$new_name"
+            webp_name="${new_name%.jpg}.webp"
+            cwebp -q 80 "$new_name" -o "$webp_name"
+            echo "Converted $file to $webp_name"
+            # Optional: Remove the temporary JPEG file if needed
+            rm "$new_name"
+        else
+            echo "Skipping non-image file: $file"
+        fi
+    else
+        echo "Skipping non-file: $file"
+    fi
+done
