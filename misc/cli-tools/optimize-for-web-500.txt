@@ -1,0 +1,45 @@
+#if jpg, code converts to webp using cwebp tool. if heic, first converts to jpg using libheif, then to webp using cwebp. Skips non-image files. then checks if the file is above 500kb, in which case it runs it again until it is at or below 500kb. moves optimized file to a subdirectory optimized-webp/
+
+# Create the 'optimized-webp' subdirectory if it doesn't exist
+mkdir -p optimized-webp
+
+for file in *.{jpg,heic,webp}; do
+    if [ -f "$file" ]; then
+        if file --mime-type "$file" | grep -q "image/jpeg"; then
+            # JPEG file, convert to WebP directly
+            new_name="${file%.jpg}.webp"
+            cwebp -q 80 "$file" -o "$new_name"
+            echo "Converted $file to $new_name"
+        elif file --mime-type "$file" | grep -q "image/heic"; then
+            # HEIC file, convert to JPEG first, then to WebP
+            new_name="${file%.heic}.jpg"
+            heif-convert "$file" "$new_name"
+            webp_name="${new_name%.jpg}.webp"
+            quality=80
+            while [ "$(du -k "$webp_name" | cut -f1)" -gt 500 ]; do
+                quality=$((quality - 1))
+                cwebp -q $quality "$new_name" -o "$webp_name"
+                echo "Reconverted $file with quality $quality to meet size requirement"
+            done
+            # Optional: Remove the temporary JPEG file if needed
+            rm "$new_name"
+        elif file --mime-type "$file" | grep -q "image/webp"; then
+            # WebP file, check if size exceeds 500kb and rerun conversion
+            quality=80
+            while [ "$(du -k "$file" | cut -f1)" -gt 500 ]; do
+                quality=$((quality - 1))
+                cwebp -q $quality "$file" -o "$file"
+                echo "Reconverted $file with quality $quality to meet size requirement"
+            done
+        else
+            echo "Skipping non-image file: $file"
+        fi
+        # Move the WebP file to 'optimized-webp-500' subdirectory
+        mv "$webp_name" optimized-webp-500/
+    else
+        echo "Skipping non-file: $file"
+    fi
+done
+
+
+
