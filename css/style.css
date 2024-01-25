@@ -6,19 +6,22 @@
 
 .logo-svg {
     margin-bottom:5px;
-    border: 1px solid #fff;
 }
 
 .logo {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: normal;
     margin-left: 20px;
-    border: 1px solid #fff;
+    
+}
+
+.source a {
+    color: #5995da;
 }
 
 .source {
     position: absolute;
-    font-size: .75rem;
+    font-size: .5rem;
     font-weight: normal;
     margin-top: -30px;
 }
@@ -50,7 +53,7 @@ a {
 }
 
 .header {
-    width: 900px;
+    width: 100rem;
     height: 300px;
     display: flex;
     justify-content: space-between;
